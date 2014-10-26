@@ -16,8 +16,8 @@ var create_payment_json = {
         "payment_method": "paypal"
     },
     "redirect_urls": {
-        "return_url": "http:\/\/localhost\/test\/rest\/rest-api-sdk-php\/sample\/payments\/ExecutePayment.php?success=true",
-        "cancel_url": "http:\/\/localhost\/test\/rest\/rest-api-sdk-php\/sample\/payments\/ExecutePayment.php?success=false"
+        "return_url": "https:\/\/resonancedrop.herokuapp.com?success=true",
+        "cancel_url": "https:\/\/resonancedrop.herokuapp.com?success=false"
     },
     "transactions": [{
         "amount": {
@@ -27,6 +27,10 @@ var create_payment_json = {
         "description": "Big Payment"
     }]
 };
+
+app.get('/', function(req, res) {
+  res.send('success');
+});
 
 app.get('/pay', function(req, res) {
   var _res = res;
