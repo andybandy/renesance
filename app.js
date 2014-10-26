@@ -41,7 +41,8 @@ app.get('/pay', function(req, res) {
     }
 
     if (res) {
-      _res.send(res);
+      // _res.send(res);
+      _res.redirect(res.links[1].href);
       console.log("Create Payment Response");
       console.log(res);
     }
