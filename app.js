@@ -21,7 +21,7 @@ var create_payment_json = {
     },
     "transactions": [{
         "amount": {
-            "currency": "USD",
+            "currency": "RUB",
             "total": "1000000.00"
         },
         "description": "Big Payment"
