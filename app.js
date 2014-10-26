@@ -28,14 +28,17 @@ var create_payment_json = {
     }]
 };
 
-app.post('/pay', function(req, res) {
+app.get('/pay', function(req, res) {
+  var _res = res;
   paypal_api.payment.create(create_payment_json, config_opts, function (err, res) {
     if (err) {
+      _res.send(res);
       throw err;
     }
 
     if (res) {
-    console.log("Create Payment Response");
+      _res.send(res);
+      console.log("Create Payment Response");
       console.log(res);
     }
   });
